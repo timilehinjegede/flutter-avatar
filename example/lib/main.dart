@@ -72,13 +72,6 @@ class MyHomePage extends StatelessWidget {
 
               // Example 4
               FAExampleFour(),
-
-              const SizedBox(
-                height: 35,
-              ),
-
-              // Example 5
-              FAExampleFive(),
             ],
           ),
         ),
@@ -154,18 +147,43 @@ class FAExampleTwo extends StatelessWidget {
 class FAExampleThree extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return FlutterAvatar(
+      backgroundColor: Colors.purple,
+      radius: 50,
+      shape: BoxShape.circle,
+      badge: Container(
+        height: 25,
+        width: 25,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          color: Colors.grey,
+        ),
+        child: Icon(
+          Icons.photo_camera,
+          size: 15,
+          color: Colors.white,
+        ),
+      ),
+      badgePosition: BadgePosition.bottomRight,
+      avatarShadow: BoxShadow(
+        color: Colors.purple.withOpacity(0.6),
+        blurRadius: 20,
+        spreadRadius: 5,
+        offset: Offset(0, 2),
+      ),
+      child: Text(
+        'TJ',
+        style: TextStyle(
+          fontSize: 35,
+          color: Colors.white,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+    );
   }
 }
 
 class FAExampleFour extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container();
-  }
-}
-
-class FAExampleFive extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container();
