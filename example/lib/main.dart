@@ -46,33 +46,29 @@ class MyHomePage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.only(top: 25.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              // Example 1
-              FAExampleOne(),
+          child: SizedBox(
+            width: double.infinity,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                // Example 1
+                FAExampleOne(),
 
-              const SizedBox(
-                height: 35,
-              ),
+                const SizedBox(
+                  height: 35,
+                ),
 
-              // Example 2
-              FAExampleTwo(),
+                // Example 2
+                FAExampleTwo(),
 
-              const SizedBox(
-                height: 35,
-              ),
+                const SizedBox(
+                  height: 35,
+                ),
 
-              // Example 3
-              FAExampleThree(),
-
-              const SizedBox(
-                height: 35,
-              ),
-
-              // Example 4
-              FAExampleFour(),
-            ],
+                // Example 3
+                FAExampleThree(),
+              ],
+            ),
           ),
         ),
       ),
@@ -180,12 +176,5 @@ class FAExampleThree extends StatelessWidget {
         ),
       ),
     );
-  }
-}
-
-class FAExampleFour extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container();
   }
 }
