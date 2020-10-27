@@ -43,6 +43,113 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text(title),
       ),
+      body: SizedBox.expand(
+        child: Padding(
+          padding: const EdgeInsets.only(top: 25.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              // Example 1
+              FAExampleOne(),
+
+              const SizedBox(
+                height: 20,
+              ),
+
+              // Example 2
+              FAExampleTwo(),
+
+              const SizedBox(
+                height: 20,
+              ),
+
+              // Example 3
+              FAExampleThree(),
+
+              const SizedBox(
+                height: 20,
+              ),
+
+              // Example 4
+              FAExampleFour(),
+
+              const SizedBox(
+                height: 20,
+              ),
+
+              // Example 5
+              FAExampleFive(),
+            ],
+          ),
+        ),
+      ),
     );
+  }
+}
+
+class FAExampleOne extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return FlutterAvatar(
+      backgroundColor: Colors.red,
+      radius: 50,
+      borderRadius: BorderRadius.all(Radius.circular(30)),
+      badge: Container(
+        height: 25,
+        width: 25,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          color: Colors.green,
+        ),
+        child: Icon(
+          Icons.add,
+          size: 20,
+          color: Colors.white,
+        ),
+      ),
+      badgePosition: BadgePosition.topRight,
+      avatarShadow: BoxShadow(
+        color: Colors.purple.withOpacity(0.6),
+        blurRadius: 20,
+        spreadRadius: 5,
+        offset: Offset(0, 2),
+      ),
+      child: Text(
+        'TJ',
+        style: TextStyle(
+          fontSize: 35,
+          color: Colors.white,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+    );
+  }
+}
+
+class FAExampleTwo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}
+
+class FAExampleThree extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}
+
+class FAExampleFour extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}
+
+class FAExampleFive extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
   }
 }
