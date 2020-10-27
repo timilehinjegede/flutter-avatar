@@ -43,7 +43,7 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text(title),
       ),
-      body: SizedBox.expand(
+      body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.only(top: 25.0),
           child: Column(
@@ -53,28 +53,28 @@ class MyHomePage extends StatelessWidget {
               FAExampleOne(),
 
               const SizedBox(
-                height: 20,
+                height: 35,
               ),
 
               // Example 2
               FAExampleTwo(),
 
               const SizedBox(
-                height: 20,
+                height: 35,
               ),
 
               // Example 3
               FAExampleThree(),
 
               const SizedBox(
-                height: 20,
+                height: 35,
               ),
 
               // Example 4
               FAExampleFour(),
 
               const SizedBox(
-                height: 20,
+                height: 35,
               ),
 
               // Example 5
@@ -129,7 +129,25 @@ class FAExampleOne extends StatelessWidget {
 class FAExampleTwo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return FlutterAvatar(
+      backgroundColor: Colors.blue,
+      radius: 50,
+      shape: BoxShape.circle,
+      avatarShadow: BoxShadow(
+        color: Colors.blue.withOpacity(0.6),
+        blurRadius: 15,
+        spreadRadius: 5,
+        offset: Offset(0, -1),
+      ),
+      child: Text(
+        'TJ',
+        style: TextStyle(
+          fontSize: 35,
+          color: Colors.white,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+    );
   }
 }
 
