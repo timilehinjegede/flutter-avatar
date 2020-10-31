@@ -174,3 +174,22 @@ class FAExampleThree extends StatelessWidget {
   }
 }
 
+class FAExampleFour extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return FlutterAvatar(
+      backgroundColor: Colors.green,
+      radius: 50,
+      shape: BoxShape.circle,
+      elevation: 10,
+      child: Text(
+        'TJ',
+        style: TextStyle(
+          fontSize: 35,
+          color: Colors.white,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+    );
+  }
+}
