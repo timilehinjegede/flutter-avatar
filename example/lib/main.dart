@@ -55,6 +55,13 @@ class MyHomePage extends StatelessWidget {
 
                 // Example 3
                 FAExampleThree(),
+
+                const SizedBox(
+                  height: 35,
+                ),
+
+                // Example 4
+                FAExampleFour(),
               ],
             ),
           ),
@@ -166,3 +173,4 @@ class FAExampleThree extends StatelessWidget {
     );
   }
 }
+

@@ -14,6 +14,8 @@ class FlutterAvatar extends StatelessWidget {
     this.avatarShadow,
     this.backgroundColor,
     this.child,
+    this.elevation = 5.0,
+    this.elevationColor = Colors.black,
   }) : assert(shape != BoxShape.circle || borderRadius == null);
 
   final double radius;
@@ -24,6 +26,8 @@ class FlutterAvatar extends StatelessWidget {
   final Color backgroundColor;
   final Widget child;
   final BoxShadow avatarShadow;
+  final double elevation;
+  final Color elevationColor;
 
   @override
   Widget build(BuildContext context) {
@@ -34,6 +38,8 @@ class FlutterAvatar extends StatelessWidget {
             shape: shape,
             color: backgroundColor,
             boxShadow: avatarShadow,
+            elevation: elevation,
+            elevationColor: elevationColor,
             child: child,
             // image: widget.backgroundImage,
           )
@@ -50,6 +56,8 @@ class FlutterAvatar extends StatelessWidget {
                     shape: shape,
                     color: backgroundColor,
                     boxShadow: avatarShadow,
+                    elevation: elevation,
+                    elevationColor: elevationColor,
                     child: child,
                     // image: widget.backgroundImage,
                   ),
@@ -97,6 +105,8 @@ class _ItemWidget extends StatelessWidget {
     this.blurColor,
     this.child,
     this.boxShadow,
+    this.elevation,
+    this.elevationColor,
   }) : super(key: key);
 
   final double radius;
@@ -107,21 +117,30 @@ class _ItemWidget extends StatelessWidget {
   final bool enableBlur;
   final Color blurColor;
   final BoxShadow boxShadow;
+  final double elevation;
+  final Color elevationColor;
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: radius * 2,
-      width: radius * 2,
-      child: DecoratedBox(
-        decoration: BoxDecoration(
-          borderRadius: borderRadius,
-          shape: shape,
-          color: color,
-          boxShadow: boxShadow != null ? [boxShadow] : null,
-        ),
-        child: Center(
-          child: child,
+    return Material(
+      elevation: elevation,
+      color: Colors.transparent,
+      type: borderRadius == null ? MaterialType.circle : MaterialType.canvas,
+      borderRadius: borderRadius,
+      shadowColor: elevationColor,
+      child: SizedBox(
+        height: radius * 2,
+        width: radius * 2,
+        child: DecoratedBox(
+          decoration: BoxDecoration(
+            borderRadius: borderRadius,
+            shape: shape,
+            color: color,
+            boxShadow: boxShadow != null ? [boxShadow] : null,
+          ),
+          child: Center(
+            child: child,
+          ),
         ),
       ),
     );
