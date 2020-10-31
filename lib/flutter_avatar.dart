@@ -5,8 +5,9 @@ import 'package:flutter/material.dart';
 enum BadgePosition { bottomRight, bottomLeft, topRight, topLeft }
 
 class FlutterAvatar extends StatelessWidget {
+  /// Creates a avatar widget which is highly customizable
   const FlutterAvatar({
-    this.radius,
+    this.radius = 20.0,
     this.borderRadius,
     this.shape = BoxShape.rectangle,
     this.badgePosition,
@@ -18,19 +19,54 @@ class FlutterAvatar extends StatelessWidget {
     this.elevationColor = Colors.black,
   }) : assert(shape != BoxShape.circle || borderRadius == null);
 
+  /// The size of the [FlutterAvatar], which is half of the Diameter
+  ///
+  /// defaults to 20
   final double radius;
+
+  /// if non-null, the corners of the [FlutterAvatar] are rounded by the value of the [borderRadius]
+  ///
+  /// Can only be used when [shape] is [BosShape.rectangle], cannot be used if [shape] is [BoxShape.circle].
   final BorderRadius borderRadius;
+
+  /// The shape to be used for the [FlutterAatar].
+  ///
+  /// If [shape] is [BoxShape.circle], the [borderRadius] cannot be used.
+  /// If [shape] is [BoxShape.rectangle], specify a [borderRadius].
   final BoxShape shape;
+
+  /// Used to change the position of the [badge] widget that is stacked on top of [FlutterAvatar]
+  ///
+  /// defaults to [BadgePosition.topLeft]
   final BadgePosition badgePosition;
+
+  /// The widget that is stacked on top of the [FlutterAvatar]
+  ///
+  /// Use [badgePosition] to change the position of the [badge] widget.
   final Widget badge;
+
+  /// The color used to fill the [FlutterAvatar].
   final Color backgroundColor;
+
+  /// The widget below this widget [FlutterAvatar] in the widget tree
+  ///
+  /// Can be a [Text] widget. If the [FlutterAvatar] requires an image, use [backgroundImage].
   final Widget child;
+
+  /// The [avatarShadow] is cast behind the [FlutterAvatar]widget
   final BoxShadow avatarShadow;
+
+  /// The elevation of the [FlutterAvatar] widget.
+  ///
+  /// The [elevation] defaults to 5.0 if a value isn't specified.
   final double elevation;
+
+  /// The color of the [elevation]
   final Color elevationColor;
 
   @override
   Widget build(BuildContext context) {
+    /// returns the [_ItemWidget] if the [badge] is null
     return badge == null
         ? _ItemWidget(
             radius: radius,
@@ -43,10 +79,11 @@ class FlutterAvatar extends StatelessWidget {
             child: child,
             // image: widget.backgroundImage,
           )
-        : Container(
+
+        /// returns a stack of widgets containing the [_ItemWidget] andd the [badge] if the [badge] is specified
+        : SizedBox(
             height: radius * 2,
             width: radius * 2,
-            // color: Colors.blue,
             child: Stack(
               children: [
                 Center(
@@ -75,7 +112,8 @@ class FlutterAvatar extends StatelessWidget {
           );
   }
 
-  dynamic _mapPositionToValues(BadgePosition badgePosition) {
+  /// used to determine the [badgePosition] to be used for the [badge]
+  List<double> _mapPositionToValues(BadgePosition badgePosition) {
     // [left value, top value, right value, bottom value]
     switch (badgePosition) {
       case BadgePosition.bottomRight:
@@ -94,6 +132,7 @@ class FlutterAvatar extends StatelessWidget {
   }
 }
 
+/// creates an [_ItemWidget]
 class _ItemWidget extends StatelessWidget {
   const _ItemWidget({
     Key key,
