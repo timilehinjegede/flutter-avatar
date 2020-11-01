@@ -29,7 +29,7 @@ class FlutterAvatar extends StatelessWidget {
   /// Can only be used when [shape] is [BosShape.rectangle], cannot be used if [shape] is [BoxShape.circle].
   final BorderRadius borderRadius;
 
-  /// The shape to be used for the [FlutterAatar].
+  /// The shape to be used for the [FlutterAvatar].
   ///
   /// If [shape] is [BoxShape.circle], the [borderRadius] cannot be used.
   /// If [shape] is [BoxShape.rectangle], specify a [borderRadius].
@@ -53,7 +53,7 @@ class FlutterAvatar extends StatelessWidget {
   /// Can be a [Text] widget. If the [FlutterAvatar] requires an image, use [backgroundImage].
   final Widget child;
 
-  /// The [avatarShadow] is cast behind the [FlutterAvatar]widget
+  /// The [avatarShadow] is cast behind the [FlutterAvatar] widget
   final BoxShadow avatarShadow;
 
   /// The elevation of the [FlutterAvatar] widget.
