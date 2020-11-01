@@ -3,7 +3,7 @@
 Various ready to use Avatars in your Flutter apps
 
 <p align="center">
-<img src="flutter_avatar/screenshots/fa_1.png" alt="Showcase 1" width="230px" hspace="30"/>  <img src="flutter_avatar/screenshots/fa_1.png" alt="Showcase 2" width="230px"/> 
+<img src="https://raw.githubusercontent.com/timilehinjegede/flutter-avatar/master/screenshots/fa_1.png" alt="Showcase 1" width="230px" hspace="30"/>  <img src="https://raw.githubusercontent.com/timilehinjegede/flutter-avatar/master/screenshots/fa_2.png" alt="Showcase 2" width="230px"/> 
 </p>
 
 ## Installing
@@ -62,12 +62,10 @@ backgroundColor    | The color used to fill the [FlutterAvatar]
 elevation    | The elevation of the [FlutterAvatar] widget. Defaults to 5.0 if no value is given.
 elevationColor    | The color of the [elevation]
 
-## Showcase
-
 
 ## Contributions 
 
 Feel free to contribute to this project.
 
-If you find a bug or want a feature, but don't know how to fix/implement it, please fill an [issue](https://github.com/timilehinjegede/flutter_avatar/issues).  
-If you fixed a bug or implemented a feature, please send a [pull request](https://github.com/timilehinjegede/flutter_avatar/pulls).
+If you find a bug or want a feature, but don't know how to fix/implement it, please fill an [issue](https://github.com/timilehinjegede/flutter-avatar/issues).  
+If you fixed a bug or implemented a feature, please send a [pull request](https://github.com/timilehinjegede/flutter-avatar/pulls).
